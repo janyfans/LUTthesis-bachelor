@@ -1,0 +1,61 @@
+% !Mode:: "TeX:UTF-8"
+\chapter{使用说明}
+\section{基本范例}
+\begin{table}
+\begin{center}
+    \begin{tabular}{c||c}
+    \hline
+    本科生论文基本结构 & 研究生论文基本结构\\\hline\hline
+    封面 & 封面（中、英文）\\
+    扉页 & 题名页、独创性声明和使用授权书\\
+    中英文摘要 & 中英文摘要\\
+    目录 & 目录\\
+    正文 & 图表清单及主要符号表（根据情况可省略）\\
+    致谢 & 主体部分\\
+    参考文献 & 参考文献\\
+    附录 & 附录\\
+    ~~ & 攻读硕士/博士期间取得的研究\slash 学术成果\\
+    ~~ & 致谢\\
+    ~~ & 作者简介(仅博士生)\\
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+本科生论文结构推荐按如下的代码形式来组织整个论文。
+\lstinputlisting[
+    language={[LaTeX]TeX},
+    caption={本科生论文结构},
+    label={code-bachelor-structure},
+]{LUTthesis-bachelor.tex}
+
+\section{模板选项}
+
+\begin{itemize}
+	\item color --- 将论文中的链接文字用颜色标识
+	\item twoteacher --- 指导老师需要填写两个的时候设置。
+	\item nospace --- 设置目录中间点距离两侧的间距为最近。
+\end{itemize}
+
+\section{封面及正文前的一些设置}
+\subsection{中英文摘要}
+论文中英文摘要为\texttt{abstract.tex}，请直接按照模板示例进行更改替换即可，关键词以及其他的一些个人论文信息在\texttt{data/bachelor/bachelor\_info.tex}或\texttt{data/master/master\_info.tex}中自行定义。
+
+\subsection{目录}
+生成目录为命令\texttt{\textbackslash tableofcontents}，需要xelatex两遍才能正确生成目录。
+
+\section{正文}
+\subsection{章节}
+正文中的各个章节，推荐将其每一章分为单独的\texttt{.tex}文件，然后使用\texttt{\textbackslash include\{chap\hyp{}ter.tex\}}将其包含进来即可。
+
+章节中的内容如何编写，请见\hyperref[chapter-basic]{第\ref{chapter-basic}章~~\LaTeX{}基础知识}。
+
+\subsection{参考文献}
+参考文献使用\texttt{BiBTeX}工具，参考文献的数据库为\texttt{bibs.bib}，可以使用记事本等文本编辑器进行编辑。具体如何进行编辑也可参照示例模板给出的范例来编写。在Winedt软件中有具体的增加参考文献的选项；在\url{book.google.com}中搜索到的书籍，在页面的最下方也有\texttt{BiBTeX}的导出选项。
+
+\texttt{.bib}参考文献数据库文件中，每个类别后的第一个为标号，在示例的\texttt{bibs.bib}中第一个书箱的标号为\textbf{kottwitz2011latex}，在引用此文献时，使用\verb|\upcite{kottwitz2011latex}|即可得到此文献\upcite{kottwitz2011latex}的引用\footnote{左侧“文献”的右上方即得到了此文献的引用。}。
+使用\verb|\cite{kottwitz2011latex}|即可得到文献\cite{kottwitz2011latex}的引用\footnote{“文献”的后面得到了此文献的引用，不是上标形式。}。
+
+\section{正文之后的内容}
+\subsection{附录}
+附录和正文中的章节编写方式一样。无特殊之处。）。
