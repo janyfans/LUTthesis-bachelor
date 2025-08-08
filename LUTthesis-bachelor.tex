@@ -4,16 +4,14 @@
 
 % 参考文献 使用 GB/T 7714
 \usepackage{gbt7714}
-% 参考文献输出方式
-% gbt7714-numerical为按照出现顺序，gbt7714-author-year为按照作者姓名和年份
-\bibliographystyle{gbt7714-numerical}
-% \bibliographystyle{gbt7714-author-year}
+% 参考文献输出方式，numerical为按照出现顺序，authoryear为按照作者姓名和年份
+\citestyle{numerical}
+% \citestyle{authoryear}
 
 \begin{document}
 
 % 用户信息
 \include{data/com_info}
-\include{data/bachelor_info}
 
 % 页眉页脚样式
 \pagestyle{mainmatter}
